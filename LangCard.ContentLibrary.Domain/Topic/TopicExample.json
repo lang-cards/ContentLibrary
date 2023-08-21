@@ -1,0 +1,65 @@
+{
+  "id": 1,
+  "title": "Ch. 1: Traveling",
+  "courseId": 1,
+  "order": 1,
+  "topicItems": [
+    {
+      "id": 1,
+      "title": "Read text",
+      "order": 1,
+      "type": "HtmlText",
+      "data": "<div> Text about trav </div>"
+    },
+    {
+      "id": 2,
+      "title": "Listen",
+      "order": 2,
+      "type": "Audio",
+      "data": "{ \"href\": \"s3-link.com\" }"
+    },
+    {
+      "id": 3,
+      "title": "Pass the test",
+      "order": 3,
+      "type": "ExerciseTest",
+      "data": {
+        "sentenses": [
+          {
+            "question": "bla bla?",
+            "answerItems": [
+              {
+                "num": 1,
+                "text": "text",
+                "isCorrect": true
+              },
+              {
+                "num": 1,
+                "text": "text"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": 4,
+      "title": "Fill empt",
+      "order": 4,
+      "type": "ExersiceFill",
+      "data": {
+        "sentenses": [
+          {
+            "sentense": "bla bla ___",
+            "answer": "answer"
+          }
+        ]
+      }
+    }
+
+  ]
+
+ 
+
+
+}
