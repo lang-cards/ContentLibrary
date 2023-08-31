@@ -54,7 +54,7 @@ public class CourseRepository : ICourseRepository
             dal.LanguageId,
             dal.TranslateLanguageId,
             dal.Topics!
-                .Select(topic => new TopicQM(topic.Id, topic.Name, topic.Description, topic.Order, topic.CreatedAt, topic.CreatedBy))
+                .Select(topic => new TopicQM(topic.Id, topic.Name, topic.Description, topic.Order, Array.Empty<TopicItemQM>(), topic.CreatedAt, topic.CreatedBy))
                 .ToArray(),
             dal.CreatedAt,
             dal.CreatedBy));

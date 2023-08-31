@@ -38,6 +38,7 @@ public class TopicRepository : ITopicRepository
     public async Task<Topic?> GetById(int id, CancellationToken cancellationToken)
     {
         var topicDal = await _db.Topics
+            .Include(x => x.TopicItems)
             .SingleOrDefaultAsync(x => x.Id == id, cancellationToken);
 
         return topicDal.MapNotNull(dal => Topic.RestoreState(
@@ -46,6 +47,9 @@ public class TopicRepository : ITopicRepository
             dal.Description,
             dal.CourseId,
             dal.Order,
+            dal.TopicItems!
+                .Select(ti => new TopicItemQM(ti.Id, ti.Title, ti.Data, ti.TopicId, ti.Order, ti.TopicItemType, ti.CreatedAt, ti.CreatedBy))
+                .ToArray(),            
             dal.CreatedAt,
             dal.CreatedBy));
     }

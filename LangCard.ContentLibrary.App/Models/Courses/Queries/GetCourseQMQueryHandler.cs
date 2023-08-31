@@ -19,11 +19,11 @@ public class GetCourseQMQueryHandler : IQueryHandler<GetCourseQMQuery, CourseQM>
         if (course is null)
             return Result<CourseQM>.CreateError($"CourseQM not found by id {request.id}");
 
-        var courseQM = course.MapNotNull(course => ToCardQM(course));
+        var courseQM = course.MapNotNull(course => ToCourseQM(course));
         return new Result<CourseQM>(courseQM);
     }
 
-    private CourseQM ToCardQM(Course course)
+    private CourseQM ToCourseQM(Course course)
     {
         return new CourseQM(
             course.Id,

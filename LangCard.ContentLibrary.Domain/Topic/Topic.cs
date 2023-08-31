@@ -6,8 +6,7 @@ public class Topic
     public string Name { get; set; }
     public string Description { get; set; }
     public int Order { get; set; }
-
-    public List<TopicItem> TopicItems { get; set; } = null!;
+    public TopicItemQM[] TopicItems { get; set; } = Array.Empty<TopicItemQM>();
     public DateTimeOffset CreatedAt { get; set; }
     public string CreatedBy { get; set; }
 
@@ -44,6 +43,7 @@ public class Topic
     string description,
     int courseId,
     int order,
+    TopicItemQM[] topicItems,
     DateTimeOffset createdAt,
     string createdBy)
     {
@@ -54,6 +54,7 @@ public class Topic
             Description = description,
             CourseId = courseId,
             Order = order,
+            TopicItems = topicItems,
             CreatedAt = createdAt,
             CreatedBy = createdBy
         };

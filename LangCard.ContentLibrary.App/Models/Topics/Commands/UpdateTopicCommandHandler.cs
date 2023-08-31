@@ -1,7 +1,7 @@
 ﻿using LangCard.ContentLibrary.App.Abstraction.Messaging;
 using LangCard.ContentLibrary.Domain.Topic;
 
-namespace LangCard.ContentLibrary.App.Models.Topics;
+namespace LangCard.ContentLibrary.App.Models.Topics.Commands;
 
 public class UpdateTopicCommandHandler : ICommandHandler<UpdateTopicCommand>
 {

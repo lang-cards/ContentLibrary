@@ -11,6 +11,7 @@ public class TopicEntityConfiguration : IEntityTypeConfiguration<TopicDal>
 
         builder.Property(x => x.Name);
         builder.Property(x => x.Description);
+        builder.Property(x => x.Order);
         builder.Property(x => x.CreatedBy);
         builder.Property(x => x.CreatedAt);
 

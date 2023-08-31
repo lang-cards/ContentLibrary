@@ -3,7 +3,7 @@ using LangCard.ContentLibrary.App.Models.Courses.Commands;
 using LangCard.ContentLibrary.Domain.Course;
 using LangCard.ContentLibrary.Domain.Topic;
 
-namespace LangCard.ContentLibrary.App.Models.Topics;
+namespace LangCard.ContentLibrary.App.Models.Topics.Commands;
 
 public class CreateTopicCommandHandler : ICommandHandler<CreateTopicCommand, int>
 {

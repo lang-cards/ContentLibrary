@@ -1,6 +1,9 @@
 ﻿using LangCard.ContentLibrary.Api.Dto.Topic;
 using LangCard.ContentLibrary.App.Models;
 using LangCard.ContentLibrary.App.Models.Topics;
+using LangCard.ContentLibrary.App.Models.Topics.Commands;
+using LangCard.ContentLibrary.App.Models.Topics.Queries;
+using LangCard.ContentLibrary.Domain.Topic;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -15,6 +18,15 @@ public class TopicsController : ControllerBase
     public TopicsController(ISender sender)
     {
         _sender = sender;
+    }
+
+    [HttpGet]
+    public async Task<TopicQM> Get(int id)
+    {
+        var result = await _sender.Send(
+            new GetTopicQMQuery(id));
+
+        return result.Value;
     }
 
     [HttpPost]
